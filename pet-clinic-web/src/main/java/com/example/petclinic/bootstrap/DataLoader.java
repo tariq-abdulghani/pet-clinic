@@ -19,12 +19,22 @@ public class DataLoader implements CommandLineRunner{
 	private final PetServiceMap petServiceMap;
 	
 	
+	
 
-	public DataLoader() {
-		this.vetServiceMap = new VetServiceMap();
-		this.ownerServiceMap = new OwnerServiceMap();
-		this.petServiceMap = new PetServiceMap();
+	public DataLoader(VetServiceMap vetServiceMap, OwnerServiceMap ownerServiceMap, PetServiceMap petServiceMap) {
+		super();
+		this.vetServiceMap = vetServiceMap;
+		this.ownerServiceMap = ownerServiceMap;
+		this.petServiceMap = petServiceMap;
 	}
+
+
+
+//	public DataLoader() {
+//		this.vetServiceMap = new VetServiceMap();
+//		this.ownerServiceMap = new OwnerServiceMap();
+//		this.petServiceMap = new PetServiceMap();
+//	}
 
 
 
