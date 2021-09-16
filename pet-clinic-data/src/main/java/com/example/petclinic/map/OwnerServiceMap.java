@@ -1,16 +1,27 @@
 package com.example.petclinic.map;
 
 import org.springframework.stereotype.Service;
-
 import com.example.petclinic.model.Owner;
-import com.example.petclinic.service.CrudService;
+import com.example.petclinic.service.OwnerService;
+
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Long, Owner> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Long, Owner> implements OwnerService {
 
     @Override
     public Owner save(Owner owner) {
         map.put(owner.getId(), owner);
         return owner;
     }
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		return  this.map
+				.values()
+				.stream()
+				.findFirst()
+				.filter(owner-> owner.getLastName().equalsIgnoreCase(lastName))
+				.get();
+		
+	}
 }
