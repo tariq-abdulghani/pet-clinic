@@ -8,12 +8,6 @@ import com.example.petclinic.service.OwnerService;
 @Service
 public class OwnerServiceMap extends AbstractMapService<Long, Owner> implements OwnerService {
 
-    @Override
-    public Owner save(Owner owner) {
-        map.put(owner.getId(), owner);
-        return owner;
-    }
-
 	@Override
 	public Owner findByLastName(String lastName) {
 		return  this.map

@@ -42,14 +42,14 @@ public class DataLoader implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		System.out.println(".....adding owners data.....");
 		Owner ownerAOwner = new Owner();
-		ownerAOwner.setId(1L);
+//		ownerAOwner.setId(1L);
 		ownerAOwner.setFirstName("Asd");
 		ownerAOwner.setLastName("lsd");
 		
 		ownerServiceMap.save(ownerAOwner);
 		
 		Owner ownerBOwner = new Owner();
-		ownerBOwner.setId(1L);
+//		ownerBOwner.setId(1L);
 		ownerBOwner.setFirstName("Asd");
 		ownerBOwner.setLastName("lsd");
 		ownerServiceMap.save(ownerBOwner);
