@@ -1,11 +1,38 @@
 
-<div class="card mt-4 shadow p-3 mb-5 bg-body rounded" th:fragment="table(title,items, displayedColumns)">
+
+<div class="card mt-4 shadow  mb-5 bg-body rounded" th:fragment="table(title,items, displayedColumns)">
+	<div class="card-body">
+		<table class="table caption-top">
+		<caption th:text="${title}">List of users</caption>
+			<thead>
+				<tr>
+					<th scope="col" th:each="col : ${displayedColumns}"th:text="${col}"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="item : ${items}" th:object="${item}">
+					<td th:each="col : ${displayedColumns}" th:text="*{ __${col}__ }">Mark</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+		
+
+
+<!--  
+<div class="card mt-4 shadow  mb-5 bg-body rounded" th:fragment="table(title,items, displayedColumns)">
 
 	<div class="card-header" th:text="${title}">Featured</div>
 	<div class="card-body">
 		<h5 class="card-title"></h5>
+	</div>
+</div>
+-->
+<!-- 
 
-		<table class="table " >
+<table class="table caption-top shadow  mb-5 bg-body rounded"  th:fragment="table(title,items, displayedColumns)">
+		<caption th:text="${title}">List of users</caption>
 			<thead>
 				<tr>
 					<th scope="col" th:each="col : ${displayedColumns}"th:text="${col}"></th>
@@ -18,8 +45,5 @@
 			</tbody>
 		</table>
 
-	</div>
-</div>
-
-
+ -->
 
