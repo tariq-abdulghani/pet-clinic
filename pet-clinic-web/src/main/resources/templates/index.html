@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layout(~{::title}, ~{::section})">
 <head>
-<title>Pat Clinic App</title>
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<title>Pet Clinic App</title>
+
 </head>
 <body>
-	<h1 th:replace="~{fragments/layout :: header}">Spring Boot MVC</h1>
-	<div class="container">
-		<h1 th:text="${'welcomeMessege'}">This is a Heading</h1>
-	</div>
+	
+	<section>
+	 	<h1 th:text="${'welcomeMessege'}">This is a Heading</h1>
+	</section>
+	
 </body>
-<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
 </html>

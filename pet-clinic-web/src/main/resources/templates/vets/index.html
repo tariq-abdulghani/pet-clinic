@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="fragments/layout :: layout(~{::title}, ~{::section})">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
-    <title>Vets</title>
+<meta charset="UTF-8">
+<title>Vets</title>
 </head>
 <body>
-<h1 th:text="'Vets List !'"> Vets List ...</h1>
+
+	<section>
+		<ul
+			th:replace="~{fragments/table ::table( 'Vets List' ,${Vets}, ${ {'id', 'firstName', 'lastName'} })}">
+		</ul>
+	</section>
+
+
 </body>
 </html>
