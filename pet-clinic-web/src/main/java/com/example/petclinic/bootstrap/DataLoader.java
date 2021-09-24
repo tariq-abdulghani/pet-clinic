@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.petclinic.map.OwnerServiceMap;
 import com.example.petclinic.map.PetServiceMap;
+import com.example.petclinic.map.PetTypeSerivceMap;
 import com.example.petclinic.map.VetServiceMap;
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.model.Pet;
@@ -17,15 +18,20 @@ public class DataLoader implements CommandLineRunner{
 	private final VetServiceMap vetServiceMap;
 	private final OwnerServiceMap ownerServiceMap;
 	private final PetServiceMap petServiceMap;
-	
+	private final PetTypeSerivceMap petTypeSerivceMap;
 	
 	
 
-	public DataLoader(VetServiceMap vetServiceMap, OwnerServiceMap ownerServiceMap, PetServiceMap petServiceMap) {
+	public DataLoader(VetServiceMap vetServiceMap, 
+			OwnerServiceMap ownerServiceMap, 
+			PetServiceMap petServiceMap,
+			PetTypeSerivceMap petTypeSerivceMap) {
+		
 		super();
 		this.vetServiceMap = vetServiceMap;
 		this.ownerServiceMap = ownerServiceMap;
 		this.petServiceMap = petServiceMap;
+		this.petTypeSerivceMap = petTypeSerivceMap;
 	}
 
 
@@ -40,6 +46,16 @@ public class DataLoader implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		System.out.println(".....adding pet types data.....");
+		PetType dog = new PetType();
+		dog.setName("dog");
+		
+		PetType cat = new PetType();
+		cat.setName("cat");
+		
+		petTypeSerivceMap.save(dog);
+		petTypeSerivceMap.save(cat);
+		
 		System.out.println(".....adding owners data.....");
 		Owner ownerAOwner = new Owner();
 //		ownerAOwner.setId(1L);
