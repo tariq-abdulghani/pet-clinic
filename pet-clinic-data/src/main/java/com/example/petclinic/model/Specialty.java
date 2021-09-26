@@ -1,7 +1,14 @@
 package com.example.petclinic.model;
 
-public class Specialty extends BaseEntity{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "specialities")
+public class Specialty extends BaseEntity{
+	
+	@Column(name = "description")
 	private String Description;
 
 	public String getDescription() {
