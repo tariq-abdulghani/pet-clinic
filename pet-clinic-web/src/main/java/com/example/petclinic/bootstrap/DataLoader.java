@@ -3,10 +3,10 @@ package com.example.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.example.petclinic.map.OwnerServiceMap;
-import com.example.petclinic.map.PetServiceMap;
-import com.example.petclinic.map.PetTypeSerivceMap;
-import com.example.petclinic.map.VetServiceMap;
+import com.example.petclinic.service.map.OwnerServiceMap;
+import com.example.petclinic.service.map.PetServiceMap;
+import com.example.petclinic.service.map.PetTypeSerivceMap;
+import com.example.petclinic.service.map.VetServiceMap;
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.model.Pet;
 import com.example.petclinic.model.PetType;

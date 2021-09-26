@@ -1,4 +1,4 @@
-package com.example.petclinic.map;
+package com.example.petclinic.service.map;
 
 import org.springframework.stereotype.Service;
 
