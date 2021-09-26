@@ -13,13 +13,13 @@ import com.example.petclinic.service.OwnerService;
 
 @Service
 @Profile("springdatajpa")
-public class OwnerSerive implements  OwnerService{
+public class OwnerSDJpaService implements  OwnerService{
 		
 	private final OwnerRepository ownerRepository;
 	
 	
 
-	public OwnerSerive(OwnerRepository ownerRepository) {
+	public OwnerSDJpaService(OwnerRepository ownerRepository) {
 		this.ownerRepository = ownerRepository;
 	}
 
