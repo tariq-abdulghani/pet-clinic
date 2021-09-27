@@ -1,12 +1,12 @@
 package com.example.petclinic.service.map;
 
+import com.example.petclinic.model.Vet;
+import com.example.petclinic.service.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.example.petclinic.model.Vet;
-import com.example.petclinic.service.CrudService;
-import com.example.petclinic.service.VetService;
-
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractMapService<Long, Vet> implements VetService {
 	
     @Override

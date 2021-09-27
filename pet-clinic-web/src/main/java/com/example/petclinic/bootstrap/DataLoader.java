@@ -1,6 +1,7 @@
 package com.example.petclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.example.petclinic.service.map.OwnerServiceMap;
@@ -13,6 +14,7 @@ import com.example.petclinic.model.PetType;
 import com.example.petclinic.model.Vet;
 
 @Component
+@Profile({"default", "map"})
 public class DataLoader implements CommandLineRunner{
 	
 	private final VetServiceMap vetServiceMap;
